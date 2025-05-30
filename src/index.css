@@ -1,3 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
+input[type="range"].hide-thumb::-webkit-slider-thumb {
+  opacity: 0;
+  pointer-events: auto;
+}
+input[type="range"].hide-thumb::-moz-range-thumb {
+  opacity: 0;
+  pointer-events: auto;
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 11px;
+  width: 11px;
+  background: #2e2e2e;
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  height: 11px;
+  width: 11px;
+  background: #2e2e2e;
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +38,86 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#scrollBTN p{
+  animation: hiddenBTN 3s infinite;
+  animation-delay: -6s;
+}
+#scrollBTN i{
+  animation: transformArrow 3s infinite;
+  animation-delay: -6s;
+}
+@keyframes hiddenBTN {
+  0%{
+    opacity: 1;
+  }
+  30%{
+    opacity: 0;
+  }
+  70%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes transformArrow {
+  0%{
+    opacity: 0;
+    top: 0;
+  }
+  25%{
+    opacity: 0;
+    top: 0;
+    
+  }
+  30%{
+    opacity: 1;
+  }
+  60%{
+    opacity: 0;
+    top: 60px;
+  }
+  100%{
+    opacity: 0;
+    top: 0;
+  }
+}
+
+html {
+  --scrollbarBG: #1d1c1c;
+  --thumbBG: #a1a1a1;
+}
+
+body::-webkit-scrollbar {
+  width: 11px;
+
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+}
+/* Chrome, Safari, Edge */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+    border: none;
+  outline: none;
+}
+
+@media (max-width: 650px) {
+  #vtext{
+    writing-mode: vertical-lr;
+  }
 }
