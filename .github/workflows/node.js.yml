@@ -1,0 +1,54 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm install
+    - run: CI=false npm run build --if-present
+      if: always()
+      
+    - name: FTP Frontend Deploy
+      if: always()
+      # You may pin to the exact commit or the version.
+      # uses: SamKirkland/FTP-Deploy-Action@8a24039354ee91000cb948cb4a1dbdf1a1b94a3c
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        # ftp server
+        server: wibbly.pl
+        # ftp username
+        username: ${{ secrets.USERNAME }}
+        # ftp password
+        password: ${{ secrets.PASSWORD }}
+        # Server port to connect to (read your web hosts docs)
+        # protocol to deploy with - ftp, ftps, or ftps-legacy
+        protocol: ftps
+        # Folder to upload from, must end with trailing slash /
+        local-dir: ./build/
+        # Path to upload to on the server. Must end with trailing slash /
+        server-dir: /
+        # Path and name of the state file - this file is used to track which files have been deployed
+        exclude: |
+          **/cgi-bin*
