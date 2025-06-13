@@ -4,10 +4,9 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useGLTF, useAnimations, ScrollControls, Plane, Cylinder } from '@react-three/drei';
 import * as THREE from 'three';
 import { useScroll, useTransform , motion, animate} from 'framer-motion';
-import { ArrowUp, ChevronLeft, ChevronRight } from 'css.gg';
 import { HexColorPicker } from 'react-colorful';
 import { int } from 'three/tsl';
-import { Textfit } from 'react-textfit';
+import { MoveUp,ChevronLeft, ChevronRight } from 'lucide-react';
 
 const MODEL_PATH = '/models/blenderfile.glb';
 const CHARACTER_ACTION = 'Action';
@@ -356,7 +355,7 @@ const Menu = ({opacity, width, height, paddings, colors , len, w}) => {
           <p className='font-Poppins text-[clamp(20px,2vw,36px)] text-[#555555] ml-3 mt-3 relative z-10'>Wybierz swój model i</p>
           <div className='font-Poppins font-bold text-black bg-[#D9D9D9] px-6 py-3 rounded-[50px] inline-block text-[clamp(14px,3vw,20px)] mt-3 ml-3 relative z-10'>zarezerwuj</div>
         </div>
-        <div onClick={handleClick} className='w-[40px] h-[40px] flex bg-[#555555] rounded-full justify-center items-center cursor-pointer relative z-10 mb-3 hover:invert-[0.9] ease-in-out duration-300'><ArrowUp/></div>
+        <div onClick={handleClick} className='w-[40px] h-[40px] flex bg-[#555555] rounded-full justify-center items-center cursor-pointer relative z-10 mb-3 hover:invert-[0.9] ease-in-out duration-300'><MoveUp/></div>
       </div>
       <motion.div className='h-auto 1ll:h-full inline-flex justify-end 1ll:items-center items-end 1ll:w-[600px] 1ll:min-w-[418px] 1ll:max-w-full max-w-[600px] w-full  relative z-10 '>
         <motion.div style={{width, padding:paddings, height }} className='bg-[#1111119f] 1ll:rounded-[50px] rounded-t-[50px] w-full 1ll:h-[80vh] h-auto 1ll:pt-8 pt-5 pb-4 1ll:px-10 flex flex-col justify-between ease-in-out duration-300 1ll:overflow-hidden '>

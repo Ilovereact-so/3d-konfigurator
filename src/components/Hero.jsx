@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion,  animate, useScroll, useTransform } from 'framer-motion'
-import $ from 'jquery'
-import { ArrowDown } from 'css.gg'
-import { Textfit } from 'react-textfit'
+import { MoveDown } from 'lucide-react'
 
 const Hero = () => {
     const targetRef = useRef(null)
@@ -62,7 +60,7 @@ const Hero = () => {
                 <p className='relative z-10 text-[clamp(17px,2vw,20px)]'>Prezentacja wlaściwości stron</p>
                 <div onClick={handleClick} id='scrollBTN' className='px-4 py-3 bg-white cursor-pointer text-black text-[17px] font-bold rounded-full mt-5 duration-300 ease-out relative overflow-hidden hover:invert-[0.9]' >
                     <p>Scroll</p>
-                    <i className='absolute top-0 left-[50%] translate-x-[-50%]'><ArrowDown/></i>
+                    <i className='absolute top-0 left-[50%] translate-x-[-50%]'><MoveDown/></i>
                 </div>
             </motion.div>
         </motion.section>
