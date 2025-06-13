@@ -1,70 +1,64 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<p align="center">
+  <img src="https://wibbly.pl/assets/logo_wibbly.svg" alt="Logo Wibbly" width="150"/>
+</p>
 
-In the project directory, you can run:
 
-### `npm start`
+# 🎨 3D Konfigurator 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Interaktywny konfigurator 3D umożliwiający personalizację obiektów w czasie rzeczywistym, zbudowany w React i Three.js.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🌐 Demo online
 
-### `npm test`
+Projekt jest dostępny do podglądu pod adresem:  
+[https://konfigurator-3d.wibbly.pl](https://konfigurator-3d.wibbly.pl)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Funkcje
+-  Personalizacja 3D - zmiana kolorów, tekstur i detali obiektu
+-  Przykład konfiguratora produku (w tym przypadku worka treningowego)
+-  Renderowanie w czasie rzeczywistym dzięki Three.js
+-  Responsywny interfejs (działa na desktopach i mobile)
+-  Wysoka postać animacji 2D **(Framer_motion, mouse_detect)**
+-  Wysoka postać animacji 3D **(cgi/ Blender actions/ Timeline)**
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧰 Stack technologiczny
+- **Frontend**: React.js
+- **3D**: Three.js, @react-three/fiber, @react-three/drei
+- **Stylowanie**: Tailwind CSS
+- **animacje UI**: Framer motion
+- **Bundler**: Vite
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Struktura projektu
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+src/
+├── assets/            
+├── components/        
+├── App.jsx            
+├── main.jsx           
+vite.config.js         
+```
 
-### `npm run eject`
+## ⚙️ Instalacja i uruchomienie
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Klonowanie repozytorium
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+git clone https://github.com/Ilovereact-so/3d-konfigurator.git
+```
+### 2. Instalacja zależności
+```
+npm install
+```
+### 3. Uruchomienie serwera -- frontend (react.js)
+```
+npm start
+```
+## ⚠️ Informacje dodatkowe
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Ten projekt został stworzony jako demonstracja moich umiejętności i jest udostępniony do **wglądu**.  
+- Nie jest przeznaczony do użytku produkcyjnego ani komercyjnego.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
