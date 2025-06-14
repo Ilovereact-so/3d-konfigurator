@@ -12,12 +12,14 @@ const MODEL_PATH = '/models/blenderfile.glb';
 const CHARACTER_ACTION = 'Action';
 const CAMERA_ACTION = 'CameraAction';
 
-function GLTFScene({ scrollY ,play }) {
+function GLTFScene({ scrollY ,play, handleLoad }) {
     const actionRef = useRef();
     const { scene, animations, cameras } = useGLTF(MODEL_PATH);
     const { actions } = useAnimations(animations, scene);
     const CameraAnimationRef = useRef()
     const CharacterAnimationRef = useRef()
+
+    handleLoad(scene)
 
     const { set } = useThree();
     const { size } = useThree();
@@ -126,7 +128,7 @@ function LightsAndGround() {
   );
 }
 
-export default function App() {
+export default function App({handleLoad}) {
   const ref = useRef();
   const [play, setPlay] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -207,7 +209,7 @@ export default function App() {
     <div className='relative w-full h-[100vh] z-10'>
       <Canvas ref={ref} shadows gl={{ antialias: true, toneMappingExposure: 1, alpha:true, toneMapping: THREE.NeutralToneMapping, outputColorSpace: THREE.SRGBColorSpace}} style={{ width: '100%', height: '100%', background:"transparent", position:"relative",zIndex:9 }}>
         <LightsAndGround />
-        <GLTFScene scrollY={animationProgress} play={play} />
+        <GLTFScene scrollY={animationProgress} play={play} handleLoad={handleLoad} />
         <mesh
           position={[0, 4.215, 0.533]}
           rotation={[0, 0, 0]}
